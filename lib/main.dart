@@ -1,4 +1,4 @@
-import 'package:aprendiendo_flutter/screens/counter_screen.dart';
+import 'package:aprendiendo_flutter/screens/login_page.dart';
 // import 'package:aprendiendo_flutter/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CounterScreen(),
+      home: LoginPage(),
     );
   }
 }

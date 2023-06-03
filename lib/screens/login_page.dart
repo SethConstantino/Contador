@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,11 +10,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Stack(
         children: [
-          const Fondo(),
-          Contenido(),
+          Fondo(),
+          SingleChildScrollView(child: Contenido()),
         ],
       ),
     );
@@ -30,8 +29,8 @@ class Fondo extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
-        Color.fromARGB(255, 151, 210, 251),
-        Color.fromARGB(255, 131, 188, 255),
+        Color(0xFF97D2FB),
+        Color(0xFF83BCFF),
       ], begin: Alignment.centerRight, end: Alignment.centerLeft)),
     );
   }
@@ -47,12 +46,12 @@ class Contenido extends StatefulWidget {
 class _ContenidoState extends State<Contenido> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const <Widget>[
+        children: <Widget>[
           Text(
             'Login',
             style: TextStyle(
@@ -142,18 +141,18 @@ class _DatosState extends State<Datos> {
             ),
           ),
         ),
-        Remember(),
+        const Remember(),
         const SizedBox(
           height: 5,
         ),
-        Botones()
+        const Botones()
       ]),
     );
   }
 }
 
 class Remember extends StatefulWidget {
-  Remember({Key? key}) : super(key: key);
+  const Remember({Key? key}) : super(key: key);
 
   @override
   State<Remember> createState() => _RememberState();
